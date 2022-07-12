@@ -18,3 +18,9 @@
     justify-content: center;
     display: flex;
 }
+
+.sum-centered-div {
+    text-align: center;
+    justify-content: center;
+    display: none;
+}

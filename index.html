@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="centered-div">
-        <div class="game-div">711</div>
+        <div class="game-div" id="num-box"></div>
     </div>
         <div class="centered-div">
-            <span>Range (inclusive):</span>
+            <span>Range of numbers(inclusive):</span>
             <input id="lower-bound"> 
             <span>to</span>
             <input id="upper-bound">
@@ -22,8 +22,20 @@
             <input id="time-between-numbers">
         </div>
         <div class="centered-div">
-            <button id="start-button">Begin</button>
+            <spam>Time (seconds) the game should last:</spam>
+            <input id="game-time">
         </div>
+        <div class="centered-div">
+            <button id="start-button">Begin</button>
+            <button id="stop-button">Stop</button>
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center; justify-content: center; display: none;" id="final-sum">
+            <span> Sum: </span> <input id="sum-input"> <button id="sum-button">Submit</button> <span style="display:none" id="game-result"></span>
+        </div>
+
+
 </body>
 <script src="script.js"></script>
 </html>
