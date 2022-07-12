@@ -12,6 +12,10 @@ function sleep(ms) {
 }
 
 async function startGame() {
+    if(gamePlaying) {
+        totalSum = 0;
+    }
+    startButton.style.display = "none"
     let x = document.getElementById("final-sum");
     let y = document.getElementById("game-result");
     x.style.display = "none"
@@ -27,7 +31,6 @@ async function startGame() {
             document.getElementById('num-box').innerHTML = ''
             return
         }
-        await sleep(timeBetweenNumbers * 1000)
         let randomNum = Math.floor(Math.random() * (upperBound - lowerBound) + lowerBound)
         if(i != 0) {
             while(pastNum == randomNum) {
@@ -37,16 +40,21 @@ async function startGame() {
         pastNum = randomNum;
         totalSum += randomNum
         document.getElementById('num-box').innerHTML = randomNum
+        await sleep(timeBetweenNumbers * 1000)
     }
     if (x.style.display === "none") {
         x.style.display = "block";
       } else {
         x.style.display = "none";
       }
+    document.getElementById('num-box').innerHTML = ''
+    startButton.style.display = "block"
 }
 
 function stopGame(){
     gamePlaying = false; 
+    document.getElementById('num-box').innerHTML = ''
+    startButton.style.display = "block";
 }
 
 function checkAnswer() {
